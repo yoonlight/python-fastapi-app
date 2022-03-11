@@ -1,5 +1,10 @@
+name: slack_alerting
+
+on:
+  workflow_call:
+
 jobs:
-  Explore-GitHub-Actions:
+  Slack-Alerting:
     runs-on: ubuntu-latest
     environment: deploy
     steps:
