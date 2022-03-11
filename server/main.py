@@ -11,10 +11,12 @@ app = FastAPI()
 dbname = get_database()
 collection_name = dbname["user_1_items"]
 
+
 class Item(BaseModel):
     name: str
     price: float
     is_offer: Optional[bool] = None
+
 
 @app.get("/")
 def read_root():
@@ -32,6 +34,7 @@ def update_item(item_id: str, item: Item):
     collection_name.update_one(
         {"_id": ObjectId(item_id)}, {"$set": item.dict()})
     return "success to update"
+
 
 @app.post("/items")
 def create_item(item: Item):
