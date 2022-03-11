@@ -1,3 +1,5 @@
+from server.config import config
+
 def get_database():
     from pymongo import MongoClient
     import pymongo
@@ -7,7 +9,7 @@ def get_database():
 
     # Create a connection using MongoClient. You can import MongoClient or use pymongo.MongoClient
     from pymongo import MongoClient
-    client = MongoClient(CONNECTION_STRING)
+    client = MongoClient(config.get("database").get("uri"))
 
     # Create the database for our example (we will use the same database throughout the tutorial
     return client['user_shopping_list']

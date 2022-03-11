@@ -3,4 +3,4 @@ uvicorn
 pydantic
 pymongo
 dnspython
-hydra-core
+python-dotenv
